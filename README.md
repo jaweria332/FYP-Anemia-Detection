@@ -5,7 +5,7 @@ This Repository is to handle and maintain finalized file required for the implem
 
 The software components mainly are divided into 3 parts,
 ## ·      Data Engineering, Training and Backend
-            ***Python language***
+***Python language***
                 - Sklearn
                 - Pandas
                 - Numpy
@@ -16,7 +16,7 @@ The software components mainly are divided into 3 parts,
 
 
 ## ·      Frontend and Middleware
-          ***Python Flask Framework***
+***Python Flask Framework***
                 - JSON
                 - Jinja templating 2.0
                 - Html and CSS
@@ -27,6 +27,6 @@ The software components mainly are divided into 3 parts,
                 
                 
 ## ·      Deployment
-        ***Docker and Heroku***
+***Docker and Heroku***
               - Bash scripts
               - Docker compose
