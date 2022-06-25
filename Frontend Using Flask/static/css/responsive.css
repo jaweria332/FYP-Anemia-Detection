@@ -1,0 +1,81 @@
+
+@media (max-width: 800px) 
+{
+   .mynav .navbar-toggler .navbar-toggler-icon { color:#fff; outline:0px;}
+   
+   .navbg 
+   {
+       background:none;
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(128,128,128,1);
+      -moz-box-shadow: 0px 0px 0px 0px rgba(128,128,128,1);
+      box-shadow: 0px 0px 0px 0px rgba(128,128,128,1);
+   }
+   
+   .mynav img
+   {
+       width:20%;
+   }
+   
+    .navbar-collapse
+    {
+        border-radius:5px;
+        background-color:rgba(0,0,0,0.8);
+        -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+         box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    }
+    
+    .navbar-nav .nav-item
+    {
+        padding:0px 10px;
+        border-bottom:1px solid #565963;
+    }
+    
+    .navbar-nav .nav-item:last-child
+    {
+        border:none;
+    }
+    
+    .top_nav
+    {
+        text-align:center;
+    }
+    
+    .donate
+    {
+        display:none;
+    }
+    
+    .mybt
+    {
+    font-size:12px;
+    height:40px;
+    font-size:12px;
+    width:100px;
+    text-align:center;
+    display:block;
+    line-height:40px;
+    background:#f2a500;
+    color:#fff;
+    transition:all ease-in-out 0.1s;
+   }
+
+.mybt a
+{
+    color:#fff;
+    transition:all ease-in-out 0.1s;
+}
+
+.mybt:hover, .mybt a:hover
+{
+    background:#f6413e; 
+    color:#fff;
+    text-decoration:none;
+}
+
+.nibd-image {
+display: none;
+} 
+}
+
+

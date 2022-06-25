@@ -1,0 +1,119 @@
+.container{
+	top: 10%;
+	left: 50%;
+	text-align: center;
+}
+
+
+
+/* used in detection_panel.html file*/
+
+.upload-box{
+	font-size: 12px;
+	color: black;
+	text-align: center;
+	background-color: white;
+	border-radius: 50px;
+	box-shadow: 2px 2px 3px 3px darkgrey;
+	height: 45px;
+	width: 250px;
+	margin-right: 20px;
+	border: 3px solid #494848;
+	letter-spacing: 1px;
+	border: 2px solid white;
+}
+
+::-webkit-file-upload-button{
+	color: white;
+	background: #2fadfc;
+	/*padding: 5px;*/
+	border-radius: 50px;
+	height: 41px;
+	width: 105px;
+	outline: none;
+	box-shadow: 2px 1px 1px lightgrey;
+	border: 2px solid white;
+	letter-spacing: 1px;
+	border: 2px solid #10A5F5;
+}
+
+
+::-webkit-file-upload-button:hover{
+	background: #494848;
+
+}
+
+::-webkit-file-upload-button:active{
+	color: #494848;
+	background: #10A5F5;
+	border: 2px solid #494848;
+	transition: 0.2s;
+
+}
+
+
+/* used in detection_panel.html file*/
+
+.standard-button{
+	padding: 7px 15px;
+	border: 3px solid #10A5F5;
+	background: #6FC9E7;
+	font-size: 15px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: white;
+	font-weight: bold;
+	transition: 0.8s;
+	text-align: center;
+	color: #494848;
+	position: relative;
+	overflow: hidden;
+	height: 40px;
+	/*width: 120px;*/
+}  
+
+
+.standard-button:hover{
+	color: white;
+	background: #494848;
+	border: 3px solid #10A5F5;
+} 
+
+.standard-button:active{
+	color: #494848;
+	background: #10A5F5;
+	border: 3px solid #494848;
+	transition: 0.5s;
+}
+
+
+
+/*used in index.html file*/ 
+
+.btn-outline-light1 {
+  	color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa; }
+
+.btn-outline-light1:hover {
+	color: #fff;
+    background-color: #ff8883;
+    border-color: #ff8883;
+     } 
+
+
+.btn-outline-light2 {
+  	color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa; 
+}
+
+.btn-outline-light2:hover {
+	color: #fff;
+    background-color: #1997cc;
+    border-color: #1997cc;
+     } 
+
+
+ 
