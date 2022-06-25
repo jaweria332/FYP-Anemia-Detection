@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anemia Analyzer</title>
+<link rel="icon" href="{{ url_for('static', filename='icon - pink.png') }}" type="image/icon type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jaygurubande.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table_styling.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/button_styling.css') }}">
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<style type="text/css">
+/****** IGNORE ******/
+body { 
+  font-family: Georgia;
+  width: 100%; 
+  background-color: #Fdfcfa; 
+}
+
+/****** CODE ******/
+
+.file-upload
+{
+  display:block;
+  text-align:center;
+  margin-left: 35%;
+  width: 400px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+.file-upload .file-select
+{
+  display:block;
+  border: 2px solid #dce4ec;
+  color: #34495e;
+  cursor:pointer;
+  height:40px;
+  line-height:40px;
+  text-align:left;
+  background:#FFFFFF;
+  overflow:hidden;
+  position:relative;
+}
+.file-upload .file-select .file-select-button
+{background:#dce4ec;
+  padding:0 10px;
+  display:inline-block;
+  height:40px;
+  line-height:40px;
+}
+.file-upload .file-select .file-select-name
+{
+  line-height:40px;
+  display:inline-block;
+  padding:0 10px;
+}
+.file-upload .file-select:hover
+{
+  border-color:#34495e;
+  transition:all .2s ease-in-out;
+  -moz-transition:all .2s ease-in-out;
+  -webkit-transition:all .2s ease-in-out;
+  -o-transition:all .2s ease-in-out;
+}
+.file-upload .file-select:hover .file-select-button
+{
+  background:#34495e;
+  color:#FFFFFF;
+  transition:all .2s ease-in-out;
+  -moz-transition:all .2s ease-in-out;
+  -webkit-transition:all .2s ease-in-out;
+  -o-transition:all .2s ease-in-out;
+}
+.file-upload.active .file-select
+{
+  border-color:#3fa46a;
+  transition:all .2s ease-in-out;
+  -moz-transition:all .2s ease-in-out;
+  -webkit-transition:all .2s ease-in-out;
+  -o-transition:all .2s ease-in-out;
+}
+.file-upload.active .file-select .file-select-button
+{
+  background:#3fa46a;
+  color:#FFFFFF;
+  transition:all .2s ease-in-out;
+  -moz-transition:all .2s ease-in-out;
+  -webkit-transition:all .2s ease-in-out;
+  -o-transition:all .2s ease-in-out;
+}
+.file-upload .file-select input[type=file]
+{
+  z-index:100;
+  cursor:pointer;
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  opacity:0;
+  filter:alpha(opacity=0);
+}
+.file-upload .file-select.file-select-disabled
+{
+  opacity:0.65;
+}
+.file-upload .file-select.file-select-disabled:hover
+{
+  cursor:default;
+  display:block;
+  border: 2px solid #dce4ec;
+  color: #34495e;
+  cursor:pointer;
+  height:40px;
+  line-height:40px;
+  margin-top:5px;
+  text-align:left;
+  background:#FFFFFF;
+  overflow:hidden;
+  position:relative;
+}
+.file-upload .file-select.file-select-disabled:hover .file-select-button
+{
+  background:#dce4ec;
+  color:#666666;
+  padding:0 10px;
+  display:inline-block;
+  height:40px;
+  line-height:40px;
+}
+.file-upload .file-select.file-select-disabled:hover .file-select-name
+{
+  line-height:40px;
+  display:inline-block;
+  padding:0 10px;
+}
+footer {
+  position: fixed;
+  bottom:0;
+  width:100%;
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  background-color: #f8f8f8;
+  color: #6c757d;
+  }
+
+</style>
+</script>
+<body>
+
+
+   <div class="container-fluid mynav">
+     <nav class="navbar navbar-expand-lg navbg static-top" style=" background: rgb(25, 151, 204,0.9)">
+      <div class="container">
+        <img src="{{ url_for('static', filename='csrd.png') }}" alt="" height="120px" width="120px" style="border-radius: 50%;">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"><i class="fa fa-navicon"></i></span>
+       </button>
+       <div class="collapse navbar-collapse navi" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item active"><a class="nav-link" href="/home" style="color: white; ">Home<span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="/prediction_panel" style="color: white; ">Detection Panel</a></li>
+          <li class="nav-item"><a class="nav-link" href="/visual" style="color: white;">Visuals</a></li>
+          <li class="nav-item"><a class="nav-link" href="/result" style="color: white;">Result</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout"> <button class="btn btn-outline-light">Log out</button></a></li>
+        </ul>
+
+<div class="nibd-image">
+             <img src="{{ url_for('static', filename='ned.png') }}" alt="" height="120px" width="120px" style="margin-left: 50px; border-radius: 50%;">
+        </div>
+    </div>
+      </div>
+    </nav>
+   </div>
+
+
+<br><br><br><br>
+  <br><br><br><br>
+<br><br>
+
+<!-- HEADER -->
+<div class="text-center">
+  <!--<img src="{{ url_for('static', filename='ned.png') }}" style="border-radius: 50%; height: 200px; width: 200px;">
+  <br>-->
+  <h2 class="text-center">Detection Panel</h2>
+  <p class="text-center">Upload Data in CSV file</p>
+</div>
+
+  <br style="line-height: 0.5;">
+
+<!--File Uploader-->
+<form action="/prediction_panel" method="POST" enctype = "multipart/form-data">
+  <!--<div class="file-upload">
+  <div class="file-select">
+    <div class="file-select-button" id="fileName">Choose File</div>
+    <div class="file-select-name" id="noFile">No file chosen...</div> 
+    <input type="file" name="chooseFile" id="chooseFile">
+  </div>
+</div>
+
+<br>
+Submit Button
+<div class="text-center">
+  <input type="submit" class="btn btn-outline-dark btn-lg" value="Submit">
+</div>-->
+<div class="text-center">
+      <input type="file" name="chooseFile" class="upload-box" />
+    <br><br>
+<!-- Submit Button -->
+  <input type="submit" value="Submit" class="btn btn-outline-light1 btn-lg">
+</div>
+</form>
+
+
+<!-- TABLE -->
+<!--<h1 class="text-center">{{ heading }}</h1>-->
+
+<div class="text-center">
+<div class="table-wrapper">
+<table>
+<!--       OBTAINING HEADERS-->
+  <thead>
+        <tr>
+          {% for header in headers %}
+            <th>{{header}}</th>
+          {% endfor %}
+       </tr>
+      </thead>
+
+      <tbody>
+        {% for value in values %}
+        <tr>
+          {% for cell in value %}
+            <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+
+        {% endfor %}
+      </tbody>
+</table>
+
+</div>
+<a href="/result"><button type="button" class="btn btn-outline-light1 btn-lg">{{btn_text}}</button></a>
+</div>
+<br><br><br>
+
+<!-- FOOTER -->
+<footer>
+  <p class="font-italic text-muted mb-0">&copy; 2022 Copyrights.&ensp; All Rights Reserved.<a href="https://csrd.neduet.edu.pk" style="text-decoration: none;"></a></p>
+  <p class="footer p style" style="font-size: 14px; font-family: Arial, Helvetica, sans-serif;">CSRD - NEDUET | NIBD</p>
+</footer>
+
+ </body>
+ </html>

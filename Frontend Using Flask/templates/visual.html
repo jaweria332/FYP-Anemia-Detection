@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<style>
+.row {
+    width: 100%;
+    padding-left: 80px ;
+    padding-right: 50px;
+}
+
+</style>
+
+
+<br><br><br><br>
+  <br><br><br><br>
+<br><br>
+
+<div class="visual">
+  <div class="row">
+    <div class="col-sm-5 col-md-6">
+          <div class="card card-style mb-2">
+        <div class="card-body">
+            <div class="chart-container" style="position: relative;">
+                <canvas id="income_vs_expense"></canvas>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">    
+      <div class="card card-style mb-2">
+        <div class="card-body">
+            <div class="chart-container" style="position: relative;">
+                <canvas id="another"></canvas>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+{% block javascript %}
+<canvas id="myChart" max-width="100" max-height="100"></canvas>
+<script>
+
+let income_vs_expense_chart = new Chart(income_vs_expense, {
+            type: 'pie',
+            data: {
+            labels: ['expense', 'income'],
+                datasets: [{
+                    label: "Income Vs Expenses",
+                    data: [5000, 7000],
+                    backgroundColor: ['#5DA5DA ', '#FAA43A', '#60BD68',
+                        '#B276B2', '#E16851', '#FB8267'],
+
+                    borderWidth: 1,
+                    hoverBorderColor: "black",
+                    hoverBorderWidth: 2,
+                    hoverBackgroundColor: 'rgba(154, 245, 140)',
+                    pointHoverRadius: 5
+                }],
+            },
+            options: {
+                    title: {
+                        display: true,
+                            text: "Income Vs Expenses",
+                                fontSize: 20,
+                    },
+                    legend: {
+                        position: "right",
+                            labels: {
+                            fontColor: "gray"
+                        },
+                        display: true,
+                    },
+
+                    elements: {
+                        hitRadius: 3,
+                    }
+            }
+        })
+
+
+
+
+const ctx = document.getElementById('another').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+{% endblock %}
+
+
+{% endblock %}

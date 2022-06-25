@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Results</title>
+
+<style>
+        .left, .right{
+        height: 50vh;
+        width: 100%;
+    }
+    .parents{
+        width: 600px;
+        height: auto;
+        margin: auto;
+
+    }
+    .child{
+        height: 110px;
+        background: #FFFF;
+        flex: 1;
+        text-align: right;
+        margin: 40px 80px 40px 80px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        top: 50px;
+        padding: 10px;
+    }
+    .sub_child{
+        margin-top: -41px;
+        width: 120px;
+        height: 115px;
+        background: #FF8883;
+        align-items: center;
+    }
+
+.text-center{
+text-align:center;
+}
+
+.description{
+text-size:16px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="text-center">
+    <h1> Technical Results </h1>
+    <h2>MODEL EVALUATION ON GIVEN DATA</h2>
+</div>
+
+<div class="row no-gutters">
+
+    <div class="col-md-6 no-gutters">
+        <div class="left">
+            <div class="parents">
+                <div class="child">
+                    <p>Accuracy <br> value%</p>
+                    <div class="sub_child"></div>
+                </div>
+                <div class="child">
+                    <p>Precision <br> value%</p>
+                    <div class="sub_child"></div>
+                </div>
+                <div class="child">
+                    <p>Recall <br> value%</p>
+                    <div class="sub_child"></div>
+                </div>
+                <div class="child">
+                    <p>F1 Score <br> value% </p>
+                    <div class="sub_child"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="description">
+    <p><b>Accuracy</b> is the ratio of correct predictions to the total number of predictions. It is one of the simplest measures of a model. We must aim for high accuracy for our model. If a model has high accuracy, we can infer that the model makes correct predictions most of the time.  <a href="https://towardsdatascience.com/understanding-accuracy-recall-precision-f1-scores-and-confusion-matrices-561e0f5e328c">Read more...</a> </p>
+    <p><b>Recall</b> calculates the ratio of predicted positives to the total number of positive labels.  <a href="https://towardsdatascience.com/understanding-accuracy-recall-precision-f1-scores-and-confusion-matrices-561e0f5e328c">Read more...</a></p>
+    <p><b>Precision</b> is the ratio of the correct positive predictions to the total number of positive predictions.A high recall can also be highly misleading  <a href="https://towardsdatascience.com/understanding-accuracy-recall-precision-f1-scores-and-confusion-matrices-561e0f5e328c">Read more...</a></p>
+    <p><b>F1 score</b> depends on both the Recall and Precision, it is the harmonic mean of both the values.  <a href="https://towardsdatascience.com/understanding-accuracy-recall-precision-f1-scores-and-confusion-matrices-561e0f5e328c">Read more...</a></p>
+</div>
+</body>
+</html>

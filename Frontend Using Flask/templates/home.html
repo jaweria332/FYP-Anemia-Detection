@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Anemia Analyzer</title>
+<link rel="icon" href="{{ url_for('static', filename='icon - pink.png') }}" type="image/icon type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jaygurubande.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}">
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/2.0.0/jquery.localScroll.min.js"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="jquery.localscroll.js" type="text/javascript"></script>
+<script src="jquery.scrollTo.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<style type="text/css">
+	body{
+		font-family: Georgia;
+	}
+</style>
+<body>
+
+
+
+
+
+   <div class="container-fluid mynav">
+     <nav class="navbar navbar-expand-lg navbg static-top" style=" background: rgb(25, 151, 204,0.9)">
+      <div class="container">
+        <img src="{{ url_for('static', filename='icon.png') }}" alt="" height="120px" width="120px" style="border-radius: 50%;">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"><i class="fa fa-navicon"></i></span>
+       </button>
+       <div class="collapse navbar-collapse navi" id="navbarResponsive">
+         <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="/home" style="color: white; ">Home<span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" style="color: white;">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#objective" style="color: white;">Objective</a></li>
+          <li class="nav-item"><a class="nav-link" href="/prediction_panel" style="color: white; ">Detection Panel</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" style="color: white;">Contact Us</a></li>
+      </ul>
+    </div>
+          <div class="nibd-image">
+             <img src="{{ url_for('static', filename='ned.png') }}" alt="" height="120px" width="120px" style="margin-left: 50px; border-radius: 50%;">
+          </div>
+      </div>
+    </nav>
+   </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+   $('.nav-item').localScroll({duration:200});
+});
+</script>
+
+
+<style type="text/css">
+
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2AABE4;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+h1 {
+    margin-bottom: 40px
+}
+
+label {
+    color: #333
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px
+}
+.carousel-item {
+  height:500px;
+}
+
+carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+.carousel-indicators .active {
+    opacity: 0.8;
+}
+
+footer {
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    background-color: #f8f8f8;
+    color: #6c757d
+  }
+
+</style>
+
+<!-- IMAGE SLIDER --> 
+   <div class="slider">
+
+     <div id="demo" class="carousel slide" data-ride="carousel">
+     <ul class="carousel-indicators">
+       <li data-target="#demo" data-slide-to="0" class="active"></li>
+       <li data-target="#demo" data-slide-to="1"></li>
+       <li data-target="#demo" data-slide-to="2"></li>
+     </ul>
+
+     <div class="carousel-inner">
+       <div class="carousel-item active">
+         <img src="{{ url_for('static', filename='27.png') }}" width="100%" height="100%">
+       </div>
+       <div class="carousel-item">
+         <img src="{{ url_for('static', filename='17.jpg') }}" width="100%">
+       </div>
+
+       <div class="carousel-item">
+         <img src="{{ url_for('static', filename='1.png') }}" width="100%" height="100%">
+       </div>
+     </div>
+
+     <a class="carousel-control-prev" href="#demo" data-slide="prev">
+       <span class="carousel-control-prev-icon"></span>
+     </a>
+     <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+     </a>
+    </div> 
+    
+   </div>
+
+
+
+<!-- MEET THE TEAM -->
+<!-- Header -->
+<header class="text-center py-5 mb-3" style="background: rgb(51, 176, 230); font-family: Georgia; font-weight: bold;">
+  <div class="container">
+    <h1 class="fw-light text-white mb-3">Meet the Team</h1>
+  </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <!-- Team Member 1 -->
+
+    <div class="col-lg-2 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="{{ url_for('static', filename='areeba.jpeg') }}" class="card-img-top" alt="..." >
+        <div class="card-body text-center">
+        	<br><br>
+          <h5 class="card-title mb-0">Areeba Munir</h5>
+            <br>
+          <div class="card-text text-black-50" style="padding-bottom: 10px;">CSIT Student - NEDUET</div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Team Member 5 -->
+    <div class="col-lg-2 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="{{ url_for('static', filename='zeeshan.jpg') }}" class="card-img-top" alt="..." style="padding-bottom: 30px;">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0" >Dr Rana Zeeshan Haider</h5>
+          <div class="card-text text-black-50" style="padding-bottom: 30px;">Assisstant Professor</div>
+        </div>
+      </div>
+    </div>
+
+<br>
+    <!-- Team Member 2 -->
+    <div class="col-lg-2 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="{{ url_for('static', filename='najeed.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+            <br>
+          <h5 class="card-title mb-0">Dr Najeed Ahmed Khan</h5>
+            <br>
+          <div class="card-text text-black-50">Associate Professor - NEDUET</div>
+        </div>
+      </div>
+    </div>
+    <!-- Team Member 3 -->
+
+
+      <div class="col-lg-2 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="{{ url_for('static', filename='jaweria.jpg') }}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+        	<br><br>
+          <h5 class="card-title mb-0">Jaweria Niaz Mughal</h5>
+            <br>
+          <div class="card-text text-black-50">CSIT Student - NEDUET</div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Team Member 4 -->
+    <div class="col-lg-2 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="{{ url_for('static', filename='Neha.jpeg') }}" class="card-img-top" alt="..." style="padding-bottom: 30px;">
+        <div class="card-body text-center">
+        	<br>
+          <h5 class="card-title mb-0" >Neha Ahmed</h5>
+            <br>
+          <div class="card-text text-black-50" style="padding-bottom: 30px;">CSIT Student - NEDUET</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+
+
+<!-- ABOUT US SECTION -->
+
+       <div class="bg-light">
+  <div class="container py-5">
+    <div class="row h-100 align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="display-4"><a name="about">About us</a></h1>
+        <p class="lead text-muted mb-0">Center for Software Rese and Development (CSRD) Lab at NED University of Engineering and Technology has an objective of the Endowment project is to consolidate and expand the Research and Development Programmes in the areas related to Information Technology and Telecommunication field. This time we are bringing the innovation in the field of HealthCare and medical by implementing the Machine Learning and Artificial Intelligence for efficient and intelligent response from the machine without requiring much human intervention.</p>
+
+        </p>
+      </div>
+      <div class="col-lg-6 d-none d-lg-block"><img src="{{ url_for('static', filename='5.jpeg') }}" alt="" class="img-fluid" style="border-radius: 50%;"></div>
+    </div>
+  </div>
+</div>
+
+<!--OBJECTIVE -->
+   <div class="bg-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light"><a name="objective">Objective</a></h2>
+        <p class="text-muted mb-4">The main objective of this system is Machine Learning based decipherment of Research CBC parameters in early discernment of common types of anemias instead of the routine CBC parameters at the research laboratory related to Health and Medical.</p>
+      </div>
+      <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="{{ url_for('static', filename='6.jpeg') }}" alt="" class="img-fluid mb-4 mb-lg-0" style="width: 1200px; height: 400px; border-radius: 50%;"></div>
+    </div>
+
+
+<!-- GOAL -->
+    <div class="row align-items-center">
+      <div class="col-lg-5 px-5 mx-auto"><img src="{{ url_for('static', filename='4.jpeg') }}" alt="" class="img-fluid mb-4 mb-lg-0"></div>
+      <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+        <h2 class="font-weight-light">Goal</h2>
+        <p class="font-italic text-muted mb-4">Using Machine Learning algorithm to identify and detect the common types of anemia at the early stage
+using Research CBC parameters instead of routine CBC to help the health sector to control this disease among the patients before it reaches a severe level..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<!-- CONTACT US -->
+<div class="container"><div class=" text-center mt-5 ">
+<h1><a name="contact">Contact Us</a></h1>
+</div>
+<div class="row ">
+<div class="col-lg-7 mx-auto">
+    <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+            <div class="container">
+                <form id="contact-form" role="form">
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group"> <label for="form_name">Firstname *</label> <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required."> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> <label for="form_lastname">Lastname *</label> <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required."> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group"> <label for="form_email">Email *</label> <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required."> </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"> <label for="form_need">Please specify your need *</label> <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                                        <option value="" selected disabled>--Select Your Issue--</option>
+                                        <option>Give suggestion(s)</option>
+                                        <option>Provide Feedback</option>
+                                        <option>Faced/faces an issue(s)</option>
+                                        <option>Others</option>
+                                    </select> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group"> <label for="form_message">Message *</label> <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea> </div>
+                            </div>
+                            <div class="col-md-12"> <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Send Message"> </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> <!-- /.8 -->
+</div> <!-- /.row-->
+</div>
+</div>
+<br>
+<br>
+<!-- FOOTER -->
+<footer>
+  <p class="font-italic text-muted mb-0">&copy; 2022 Copyrights.&ensp; All Rights Reserved.<a href="https://csrd.neduet.edu.pk" style="text-decoration: none;"></a></p>
+  <p class="footer p style" style="font-size: 14px; font-family: Arial, Helvetica, sans-serif;">CSRD - NEDUET | NIBD</p>
+</footer>
+
+</body>
+</html>

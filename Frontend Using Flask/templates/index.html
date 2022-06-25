@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<header>
+  
+  <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 500px;
+      }
+    }
+  </style>
+
+  
+
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('/static/anemia.png'); height:800px; background-repeat: no-repeat; background-size: 100% 100%;"
+  >
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+    <a href="/home" class="btn btn-outline-light1 btn-lg" role="button" aria-pressed="true" style="position: absolute; top:600px; left: 78px;">Get Started</a>
+</div>
+</header>
+<!--
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+   
+  <div class="p-5 text-center" class="p-5 text-center bg-image"
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');">
+    <b><h1 class="mb-3" style="font-family: Georgia"><b>WELCOME TO THE ANEMIA DETECTION SYSTEM</b></h1>
+    <b><h4 class="mb-3" style="font-family: Georgia">Let's bring innovation in the medical sector with Machine Learning and Artificial Intelligence</h4></b>
+    <a href="/home" class="btn btn-outline-dark btn-lg" role="button" aria-pressed="true">Get Started</a>
+  </div>
+  -->
+
+{% endblock %}
