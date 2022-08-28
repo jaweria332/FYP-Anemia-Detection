@@ -1,0 +1,16 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/practice_flask",
+    "prod_uri": "mysql://root:@localhost/practice_flask",
+    "prod_uri":"mysql://root:@localhost/codehunter",
+    "website_title": "Anemia Detection with CBC research Parameter",
+    "author_name": "Jaweria | Neha | Areeba",
+    "tag_line": "We can do it!",
+    "upload_location": "E:\\7th Semester\\FYP\\Projects\\Github Repo\\Flask-practice",
+    "login_image": "login.svg",
+    "admin_user": "admin",
+    "admin_password": "admin"
+  }
+}
